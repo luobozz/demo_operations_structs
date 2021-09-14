@@ -1,0 +1,61 @@
+version: "2"
+services:
+  nginx:
+    image: nginx:1.19.10
+    container_name: "nginx"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "80:80"
+    volumes:
+      - "/home/operations/luobo/properties/nginx/conf.d/:/etc/nginx/conf.d/"
+      - "/home/operations/luobo/resources/client/:/home/client/"
+    depends_on:
+      - "s1"
+    links:
+      - "s1"
+  s1:
+    image: java:8
+    container_name: "s1"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    expose:
+      - "1000"
+    volumes:
+      - "/home/operations/luobo/resources/jar/s1.jar:/s1.jar"
+    entrypoint: java -jar /s1.jar
+    depends_on:
+      - "redis"
+      - "mysql"
+    links:
+      - "redis"
+      - "mysql"
+  redis:
+    image: redis:6.2.2
+    container_name: "redis"
+    restart: always
+    command: redis-server --requirepass 111111
+    environment:
+      - TZ=Asia/Shanghai
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+  mysql:
+    image: mysql:8.0.23
+    container_name: "mysql"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - "/home/operations/luobo/properties/mysql/conf:/etc/mysql"
+      - "/home/operations/luobo/properties/mysql/logs:/logs"
+      - "/home/operations/luobo/properties/mysql/data:/var/lib/mysql"
+      - "/home/operations/luobo/properties/mysql/init:/docker-entrypoint-initdb.d/"
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
