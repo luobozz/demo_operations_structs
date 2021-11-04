@@ -31,6 +31,7 @@ GRANT All privileges ON luckyframe.* TO 'luckyframe'@'%';
 ```
  
   1. 使用 telnet ${ip} ${port}的方式判断下在网络环境中3306的可访问性
+     例如 telnet 192.168.1.8 8080
   
   2. 先检查mysql是否设置了仅本机访问，查看mysqld.cnf文件(apt安装默认目录/etc/mysql/mysql.conf.d/mysqld.cnf)，如果
   bind-address = 127.0.0.1 这行没有注释，那么注释他之后重启mysql服务
