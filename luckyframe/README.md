@@ -4,17 +4,18 @@
 
 # luckyframe搭建步骤
 
-###  mysql数据库 `可以使用docker容器或者宿主机安装mysql`
+###  mysql数据库 
+>**可以使用docker容器或者宿主机安装mysql**
 
-1. 安装mysql
-2. 创建luckyframe数据库
+1. **安装mysql**
+2. **创建luckyframe数据库**
    - 命令行创建
         `CREATE DATABASE luckyframe`
    - navicat创建，右键连接内创建数据库即可
      
      ![](./readmeRes/img/创建数据库.png)
 
-3. 创建luckframe用户
+3. **创建luckframe用户**
 
 ```
 $ CREATE USER 'luckyframe'@'%' IDENTIFIED BY 'luckyframe';
