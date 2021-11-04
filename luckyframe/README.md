@@ -24,7 +24,7 @@ GRANT All privileges ON luckyframe.* TO 'luckyframe'@'%';
 ```
 ### 常见问题
         
->Q: 建立好的数据库navicat或者luckyframe服务端无法访问到怎么办
+>Q: **建立好的数据库navicat或者luckyframe服务端无法访问到怎么办**
 
 >A: 检查下你开放的端口(默认3306)
 
