@@ -18,16 +18,17 @@
 3. **创建luckframe用户**
 
 ```
-$ CREATE USER 'luckyframe'@'%' IDENTIFIED BY 'luckyframe';
-    
-$ GRANT All privileges ON luckyframe.* TO 'luckyframe'@'%';
+CREATE USER 'luckyframe'@'%' IDENTIFIED BY 'luckyframe';
+  
+GRANT All privileges ON luckyframe.* TO 'luckyframe'@'%';
 ```
 ### 常见问题
         
-> Q: 建立好的数据库navicat或者luckyframe服务端无法访问到怎么办
+>Q: 建立好的数据库navicat或者luckyframe服务端无法访问到怎么办
+
+>A: 检查下你开放的端口(默认3306)
 
 ```
-A:检查下你开放的端口(默认3306)
  
   1. 使用 telnet ${ip} ${port}的方式判断下在网络环境中3306的可访问性
   
