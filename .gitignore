@@ -1,5 +1,8 @@
 ##分组按ide/system/pack等类目区分
 
+# Visual Studio Code
+/.history/
+
 # IntelliJ IDEA Project files
 .idea
 *.iml
