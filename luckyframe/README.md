@@ -22,14 +22,16 @@
         GRANT All privileges ON luckyframe.* TO 'luckyframe'@'%';
 
 4. **初始化库结构 [LuckyFrameWeb](https://github.com/seagull1985/LuckyFrameWeb)**
+    
+    `在命令行或者任意sql工具(navicat)中执行脚本都行`
 
     >在服务端项目 LuckyFrameWeb的根目录下，有一个 mysqldb的文件夹，此文件夹中包含了2个子文件夹：
 
-    >文件夹 initialization(create table) ：此目录是项目数据初始化的路径，如果你是第一次安装环境，那么可以进入到此路径下，此文件夹中包含了各种版本的初始化SQL文件，找到自己下载项目所属版本的SQL文件，去执行SQL即可。
+    >文件夹 **initialization**(create table) ：此目录是项目数据初始化的路径，如果你是第一次安装环境，那么可以进入到此路径下，此文件夹中包含了各种版本的初始化SQL文件，找到自己下载项目所属版本的SQL文件，去执行SQL即可。
         
     ![](/luckyframe/readmeRes/img/initialization.png)
         
-    >文件夹  update(alter table) ：此目录是项目升级需要的SQL路径，如果你现在想把旧版本升级到最新版本，找到对应的更新SQL文件，执行即可。
+    >文件夹  **update**(alter table) ：此目录是项目升级需要的SQL路径，如果你现在想把旧版本升级到最新版本，找到对应的更新SQL文件，执行即可。
     >注意： 不可跨级更新，比如你现在是2.4版本，想升级到2.6版本，那么你必须先执行【 V2.4 upgrade V2.5】中的文件，升级到V2.5版本的数据结构，再执行【 V2.5 upgrade V2.6】中的文件，升级到V2.6。
 
     ![](/luckyframe/readmeRes/img/sqldb-update.png)
