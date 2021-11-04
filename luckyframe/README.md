@@ -37,5 +37,6 @@ GRANT All privileges ON luckyframe.* TO 'luckyframe'@'%';
   bind-address = 127.0.0.1 这行没有注释，那么注释他之后重启mysql服务
   
   3. 第二步不行的话检查下本机的防火墙设置
+     ubuntu默认防火墙ufw的开启和关闭设置(https://www.jianshu.com/p/2d819f07c0b9)
       
 ```
