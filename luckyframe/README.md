@@ -40,9 +40,22 @@
 
     >从V2.X升级到V3.X由于是属于重构级别，所以不能直接升级，需要先执行V3.X版本的初始化SQL文件，再执行V2.7.2升级到V3.0的升级SQL文件，对数据进行迁移，具体操作可参照升级文章，后续会提供。
 
-5. **部署项目客户端和服务端 [LuckyFrameOperations](https://github.com/luobozz/operations_structs/tree/master/luckyframe)**
+5. **打包项目客户端和服务端 [LuckyFrameOperations](https://github.com/luobozz/operations_structs/tree/master/luckyframe)**
+
+    >编辑depoly.bat文件更改`web_path`和`client_path` 分别是你环境中luckyframeweb和luckyframeclient的绝对路径
+
+    >执行depoly.bat
+
+6. **部署项目客户端和服务端 [LuckyFrameOperations](https://github.com/luobozz/operations_structs/tree/master/luckyframe)**
     
-    >复制本项目builder目录到服务器，执行dockercompose命令部署容器即可
+    >将depoly.bat生成好的.lbop/luckyframe.tar复制到服务器解压
+
+    ```
+        tar -xvf luckyframe.tar
+        rm luckyframe.tar
+    ```
+
+    >到luckyframe目录内执行dockercompose命令部署容器
     
     `dockercompose up -d`
     
