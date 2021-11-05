@@ -46,6 +46,8 @@
     
     `dockercompose up -d`
     
+    >服务端端口:80 客户端端口口
+
     >其他相关打包或者其他部署查看luckyframe相关部署文档
     - **[项目配置](http://www.luckyframe.cn/book/yhsc/xmpz-23.html)**
     - **[项目部署](http://www.luckyframe.cn/book/yhsc/xmbs-26.html)**

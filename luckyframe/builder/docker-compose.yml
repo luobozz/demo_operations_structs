@@ -1,0 +1,13 @@
+version: "2"
+services:
+  luckyframe:
+    image: java:8
+    container_name: "luckyframe"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "1380:80"
+    volumes:
+      - "/home/operations/luckyfreame/builder/lib/LuckyFrameWeb.jar:/luckyFrame/LuckyFrameWeb.jar"
+    entrypoint: java -jar /luckyFrame/LuckyFrameWeb.jar
