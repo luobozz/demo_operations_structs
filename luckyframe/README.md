@@ -1,6 +1,8 @@
 # luckyframe全部环境依赖
 
 * mysql数据库 
+* docker
+* docker-compose
 
 # luckyframe搭建步骤
 
@@ -38,6 +40,16 @@
 
     >从V2.X升级到V3.X由于是属于重构级别，所以不能直接升级，需要先执行V3.X版本的初始化SQL文件，再执行V2.7.2升级到V3.0的升级SQL文件，对数据进行迁移，具体操作可参照升级文章，后续会提供。
 
+5. **部署项目客户端和服务端 [LuckyFrameOperations](https://github.com/luobozz/operations_structs/tree/master/luckyframe)**
+    
+    >复制本项目builder目录到服务器，执行dockercompose命令部署容器即可
+    
+    `dockercompose up -d`
+    
+    >其他相关打包或者其他部署查看luckyframe相关部署文档
+    - **[项目配置](http://www.luckyframe.cn/book/yhsc/xmpz-23.html)**
+    - **[项目部署](http://www.luckyframe.cn/book/yhsc/xmbs-26.html)**
+   
 ### 常见问题
         
 >Q: **建立好的数据库navicat或者luckyframe服务端无法访问到怎么办**
