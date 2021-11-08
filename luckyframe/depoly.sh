@@ -1,5 +1,6 @@
 #!/bin/bash
 # 用来发布当前环境到服务器的脚本
+app_name="luckyframe"
 # 填写当前环境中LuckyFrameWeb项目的位置
 web_path="/mnt/e/code/gitCode/w/LuckyFrameWeb"
 client_path="/mnt/e/code/gitCode/w/LuckyFrameClient"
@@ -23,13 +24,13 @@ cp -r $client_path/target/classes/* $op_path/.lbop/lib/LuckyFrameClient/
 # 打包其他依赖
 cp -r $op_path/builder/* $op_path/.lbop/
 
-rm $op_path/.lbop/luckyframe.tar
+rm $op_path/.lbop/$app_name.tar
 # 压缩
 cd $op_path/.lbop/
-tar -cf luckyframe.tar *
+tar -cf $app_name.tar *
 
-rm $op_path/releases/luckyframe.tar
-cp $op_path/.lbop/luckyframe.tar $op_path/releases/
+rm $op_path/.lb_releases/$app_name.tar
+cp $op_path/.lbop/$app_name.tar $op_path/.lb_releases/
 
 # scp行
-scp $op_path/releases/luckyframe.tar $scp_od
+scp $op_path/.lb_releases/$app_name.tar $scp_od
