@@ -10,7 +10,11 @@ scp_od="shtf@192.168.1.42:/home/operations/luckyframe/"
 op_path=`pwd`
 # echo $op_path
 
-rm -rf $op_path/.lbop/lib/
+rm -rf $op_path/.lbop
+rm -rf $op_path/.lb_releases
+
+mkdir -p $op_path/.lbop
+mkdir -p $op_path/.lb_releases
 mkdir -p $op_path/.lbop/lib/
 # 打包web
 cd $web_path
