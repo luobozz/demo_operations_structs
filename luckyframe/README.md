@@ -42,29 +42,42 @@
 
 5. **打包项目客户端和服务端 [LuckyFrameOperations](https://github.com/luobozz/operations_structs/tree/master/luckyframe)**
 
+    >由于编译环境复杂性，先自己分别到client和web的项目下自己通过各种方式编译出文件，需是标准maven target 输出
+
     >编辑depoly.bat文件更改`web_path`和`client_path` 分别是你环境中luckyframeweb和luckyframeclient的绝对路径
 
-    >执行depoly.bat
+    >如果需要脚本scp则填写scp地址，并且不注释后面的scp行
+
+    >执行depoly.bat(生成relases/luckyframe.tar)
 
 6. **部署项目客户端和服务端 [LuckyFrameOperations](https://github.com/luobozz/operations_structs/tree/master/luckyframe)**
     
-    >将depoly.bat生成好的.lbop/luckyframe.tar复制到服务器解压
+    >将depoly.bat生成好的.lbop/luckyframe.tar复制到服务器解压，或者使用public.sh脚本解压
 
     ```
         tar -xvf luckyframe.tar
         rm luckyframe.tar
     ```
 
-    >到luckyframe目录内执行dockercompose命令部署容器
+    >到luckyframe目录内执行dockercompose命令部署容器，或者到luckyframe目录内执行./build.sh文件部署容器
     
     `dockercompose up -d`
+    `sudo chmod +x ./build.sh & ./build.sh`
     
-    >服务端端口:80 客户端端口口
+    >服务端端口:6680:80 客户端端口口:6633:6633
 
     >其他相关打包或者其他部署查看luckyframe相关部署文档
     - **[项目配置](http://www.luckyframe.cn/book/yhsc/xmpz-23.html)**
     - **[项目部署](http://www.luckyframe.cn/book/yhsc/xmbs-26.html)**
    
+7. **相关资料**
+   
+   1. 端口
+      - 服务端端口:6680:80
+      - 客户端端口口:6633:6633
+   2. 项目预览地址
+      - http://服务端地址/login
+
 ### 常见问题
         
 >Q: **建立好的数据库navicat或者luckyframe服务端无法访问到怎么办**

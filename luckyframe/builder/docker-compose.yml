@@ -7,7 +7,8 @@ services:
     environment:
       - TZ=Asia/Shanghai
     ports:
-      - "1380:80"
+      - "6680:80"
+      - "6633:6633"
     volumes:
-      - "/home/operations/luckyfreame/builder/lib/LuckyFrameWeb.jar:/luckyFrame/LuckyFrameWeb.jar"
-    entrypoint: java -jar /luckyFrame/LuckyFrameWeb.jar
+      - "/home/operations/luckyframe/lib:/luckyFrame"
+    entrypoint: sh /luckyFrame/start.sh
